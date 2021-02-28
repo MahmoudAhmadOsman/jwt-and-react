@@ -15,14 +15,16 @@ const UserSchema = new mongoose.Schema({
     required: true,
   },
   role: {
+    //Define User Roles
     type: String,
     enum: ["user", "admin"],
     required: true,
   },
   todos: [
+    //Array of todos
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Todo",
+      ref: "Todo", // Referece the todo model
     },
   ],
 });
