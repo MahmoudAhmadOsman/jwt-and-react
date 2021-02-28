@@ -16,6 +16,14 @@ mongoose.connect(
   }
 );
 
+// Data parsing
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: false,
+  })
+);
+
 // const userRouter = require("./routes/User");
 // app.use("/user", userRouter);
 
