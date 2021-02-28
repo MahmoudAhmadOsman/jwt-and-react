@@ -1,3 +1,3 @@
-## JWT & and Reactjs Login
+## JWT & Reactjs Login
 
  
