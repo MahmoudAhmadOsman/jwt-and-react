@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import AuthService from "../Services/AuthService";
+import Loading from "../components/Loading";
 // Create Context
 //AuthContext: gives us Providers & Consumer
 export const AuthContext = createContext();
@@ -23,7 +24,8 @@ export default ({ children }) => {
   return (
     <div>
       {!isLoading ? (
-        <h1>Loading...</h1>
+        //   <h1>Loading...</h1>
+        <Loading />
       ) : (
         <AuthContext.Provider
           value={{ user, setUser, isAuthenticated, setIsAuthenticated }}
