@@ -18,7 +18,7 @@ passport.use(
     //Options
     {
       jwtFromRequest: cookieExtractor, //set cookie on the clientside, custom function
-      secretOrKey: "JWTAuthenticationDemo",
+      secretOrKey: "MahmoudOsman",
     },
     (payload, done) => {
       User.findById({ _id: payload.sub }, (err, user) => {
