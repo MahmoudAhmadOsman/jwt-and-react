@@ -10,7 +10,7 @@
 - Passport
 - Bootstrap 4
 - HTML5/CSS3
-- And More..
+- And More...
 
 ---
 
