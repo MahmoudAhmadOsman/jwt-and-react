@@ -7,8 +7,10 @@
 - React js
 - MongoDB
 - Bcrypt
+- Passport
 - Bootstrap 4
 - HTML5/CSS3
+- And More..
 
 ---
 
