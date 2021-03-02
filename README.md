@@ -1,12 +1,12 @@
 ## React & JWT Authorization & Authentication
 
-## Used Technologies :
+#### Used Technologies :
 
 - JWT (JSON WEB TOKEN)
 - Express js
 - React js
 - MongoDB
-- Bcry
+- Bcrypt
 - Bootstrap 4
 - HTML5/CSS3
 
