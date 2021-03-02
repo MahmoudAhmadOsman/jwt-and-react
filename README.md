@@ -1,4 +1,4 @@
-## JWT Authorization & Authorization
+## React & JWT Authorization & Authentication
 
 ## Used Technologies :
 
