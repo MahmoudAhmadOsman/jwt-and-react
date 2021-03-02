@@ -34,12 +34,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// app.listen(5050, () => {
-//   console.log("express server started");
-// });
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () =>
-  console.log("Serve started at http://localhost:", `${port}`)
+  console.log("Server started at http://localhost:", `${port}`)
 );
 
 //Show/handle the server error in better way
