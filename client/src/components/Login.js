@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Login() {
+const Login = () => {
   return (
     <section className="login">
       <div className="container">
@@ -8,4 +8,5 @@ export default function Login() {
       </div>
     </section>
   );
-}
+};
+export default Login;

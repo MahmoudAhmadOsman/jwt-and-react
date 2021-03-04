@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Register() {
+const Register = () => {
   return (
     <section className="register">
       <div className="container">
@@ -53,4 +53,5 @@ export default function Register() {
       </div>
     </section>
   );
-}
+};
+export default Register;
