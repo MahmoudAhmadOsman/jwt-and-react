@@ -41,21 +41,21 @@ userRouter.post("/register", (req, res) => {
           msgError: true,
         },
       });
+    //Create new User
     else {
-      //Create new User
       const newUser = new User({ username, password, role });
       newUser.save((err) => {
         if (err)
           res.status(500).json({
             message: {
-              msgBody: "An error has occured!",
+              msgBody: "An error has occured while trying to create new user!",
               msgError: true,
             },
           });
         else
           res.status(201).json({
             message: {
-              msgBody: "A new account has been created!",
+              msgBody: "Success: A new account has been created!",
               msgError: false,
             },
           });
