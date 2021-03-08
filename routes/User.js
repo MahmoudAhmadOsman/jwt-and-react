@@ -29,7 +29,7 @@ userRouter.post("/register", (req, res) => {
     if (err)
       res.status(500).json({
         message: {
-          msgBody: "An error has occured!",
+          msgBody: "An error has occured. Cannot find the user!",
           msgError: true,
         },
       });
@@ -48,7 +48,8 @@ userRouter.post("/register", (req, res) => {
         if (err)
           res.status(500).json({
             message: {
-              msgBody: "An error has occured while trying to create new user!",
+              msgBody:
+                "An error has occured while trying to create a new user!",
               msgError: true,
             },
           });

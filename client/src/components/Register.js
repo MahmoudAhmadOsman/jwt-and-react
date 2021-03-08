@@ -45,8 +45,8 @@ const Register = (props) => {
             {message ? <Message message={message} /> : null}
             <form onSubmit={onSubmit}>
               <div className="form-group">
-                <label htmlFor="username" className="sr-only">
-                  Username:
+                <label htmlFor="username" className="font-weight-bold">
+                  User Name
                 </label>
                 <input
                   type="text"
@@ -59,8 +59,8 @@ const Register = (props) => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password" className="sr-only">
-                  Password:
+                <label htmlFor="password" className="font-weight-bold">
+                  Password
                 </label>
                 <input
                   type="password"
@@ -74,8 +74,8 @@ const Register = (props) => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="role" className="sr-only">
-                  Role:
+                <label htmlFor="role" className="font-weight-bold">
+                  User Role
                 </label>
                 <input
                   type="text"

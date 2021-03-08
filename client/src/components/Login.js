@@ -1,45 +1,26 @@
 import React, { useState, useContext } from "react";
 import AuthService from "../Services/AuthService";
-
-import { AuthContext } from "../Context/AuthContext"; //Custon Global State
-import { Link } from "react-router-dom";
 import Message from "./Message";
+import { AuthContext } from "../Context/AuthContext";
 
-//Takes 1 arg of props
 const Login = (props) => {
-  //1. Set states
-
-  //Set username and password
   const [user, setUser] = useState({ username: "", password: "" });
-
-  //Set message
   const [message, setMessage] = useState(null);
-
-  //Set or bring the Auth Context
   const authContext = useContext(AuthContext);
 
-  //handleOnChange function
-  const handleOnChange = (e) => {
-    e.preventDefault();
-    //Set the user now
-    setUser({
-      ...user,
-      [e.target.name]: e.target.value,
-    });
-    console.log(user);
+  const onChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  const handleOnSubmit = (e) => {
-    e.prevenDefault();
-    console.log("Login form is submitted!");
-
+  const onSubmit = (e) => {
+    e.preventDefault();
     AuthService.login(user).then((data) => {
-      console.log("The submitted data: ", data);
-      const { isAuthenticated, user, message } = data; //Pull out user, message & isAuthenticated
+      console.log(data);
+      const { isAuthenticated, user, message } = data;
       if (isAuthenticated) {
         authContext.setUser(user);
         authContext.setIsAuthenticated(isAuthenticated);
-        props.history.push("/todos"); //Take the user to todos page
+        props.history.push("/todos");
       } else setMessage(message);
     });
   };
@@ -47,10 +28,15 @@ const Login = (props) => {
   return (
     <section className="login">
       <div className="container">
-        <h1 className="text-info">Login</h1> <hr />
+        <h1 className="text-info">Login</h1>
+        <small className="text-muted mb-3">
+          Please login, using username & password
+        </small>
+        <hr />
+        {message ? <Message message={message} /> : null}
         <div className="row">
           <div className="col-md-8">
-            <form onSubmit={handleOnSubmit}>
+            <form onSubmit={onSubmit}>
               <div className="form-group">
                 <label htmlFor="username" className="font-weight-bold">
                   User Name
@@ -58,10 +44,9 @@ const Login = (props) => {
                 <input
                   type="text"
                   name="username"
-                  placeholder="Enter your username"
+                  onChange={onChange}
                   className="form-control form-control-lg"
-                  required
-                  onChange={handleOnChange}
+                  placeholder="Enter your username"
                 />
               </div>
 
@@ -72,28 +57,21 @@ const Login = (props) => {
                 <input
                   type="password"
                   name="password"
-                  placeholder="Enter your password"
+                  onChange={onChange}
                   className="form-control form-control-lg"
-                  required
-                  onChange={handleOnChange}
+                  placeholder="Enter your Password"
                 />
               </div>
-              <button
-                type="submit"
-                className="btn btn-outline-info btn-lg font-weight-bold"
-              >
-                Log In
+
+              <button type="submit" className="btn btn-lg btn-outline-info">
+                Login
               </button>
-              <span className="ml-3">
-                <Link to="/register">Don't have an account?</Link>
-              </span>
             </form>
-            {/* Display Message here */}
-            {message ? <Message message={message} /> : null}
           </div>
         </div>
       </div>
     </section>
   );
 };
+
 export default Login;
