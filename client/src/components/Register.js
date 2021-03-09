@@ -41,7 +41,11 @@ const Register = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-md-10">
-            <h1 className="text-info">Register</h1> <hr />
+            <h1 className="text-info">Register</h1>
+            <small className="text-muted mb-3">
+              Please register by providing username & password.
+            </small>
+            <hr />
             {message ? <Message message={message} /> : null}
             <form onSubmit={onSubmit}>
               <div className="form-group">

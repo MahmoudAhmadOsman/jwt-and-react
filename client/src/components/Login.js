@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import AuthService from "../Services/AuthService";
 import Message from "./Message";
 import { AuthContext } from "../Context/AuthContext";
+import { Link } from "react-router-dom";
 
 const Login = (props) => {
   const [user, setUser] = useState({ username: "", password: "" });
@@ -30,7 +31,7 @@ const Login = (props) => {
       <div className="container">
         <h1 className="text-info">Login</h1>
         <small className="text-muted mb-3">
-          Please login, using username & password
+          Please login, using your username & password.
         </small>
         <hr />
         {message ? <Message message={message} /> : null}
@@ -66,6 +67,9 @@ const Login = (props) => {
               <button type="submit" className="btn btn-lg btn-outline-info">
                 Login
               </button>
+              <span className="ml-3">
+                <Link to="/register">Don't have an account?</Link>
+              </span>
             </form>
           </div>
         </div>
