@@ -24,7 +24,7 @@ export default ({ children }) => {
   return (
     <div>
       {!isLoading ? (
-        //   <h1>Loading...</h1>
+        
         <Loading />
       ) : (
         <AuthContext.Provider
