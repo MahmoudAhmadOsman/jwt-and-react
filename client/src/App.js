@@ -8,8 +8,8 @@ import Register from "./components/Register";
 import About from "./components/About";
 
 function App() {
-  return (
-    <section className="app">
+    return (
+        <section className="app">
       <Router>
         <Navbar />
         <Switch>
@@ -20,7 +20,7 @@ function App() {
         </Switch>
       </Router>
     </section>
-  );
+    );
 }
 
 export default App;
