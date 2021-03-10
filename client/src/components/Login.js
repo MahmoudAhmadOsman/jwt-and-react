@@ -48,6 +48,7 @@ const Login = (props) => {
                   onChange={onChange}
                   className="form-control form-control-lg"
                   placeholder="Enter your username"
+                  required
                 />
               </div>
 
@@ -60,11 +61,15 @@ const Login = (props) => {
                   name="password"
                   onChange={onChange}
                   className="form-control form-control-lg"
-                  placeholder="Enter your Password"
+                  placeholder="Enter your password"
+                  required
                 />
               </div>
 
-              <button type="submit" className="btn btn-lg btn-outline-info">
+              <button
+                type="submit"
+                className="btn btn-lg btn-outline-info font-weight-bold"
+              >
                 Login
               </button>
               <span className="ml-3">

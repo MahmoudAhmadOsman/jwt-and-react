@@ -58,7 +58,7 @@ const Register = (props) => {
                   value={user.username}
                   onChange={onChange}
                   className="form-control form-control-lg"
-                  placeholder="Enter Your Username"
+                  placeholder="Enter your username"
                   required
                 />
               </div>
@@ -72,7 +72,7 @@ const Register = (props) => {
                   value={user.password}
                   onChange={onChange}
                   className="form-control form-control-lg"
-                  placeholder="Enter Your Password"
+                  placeholder="Enter your password"
                   required
                 />
               </div>
