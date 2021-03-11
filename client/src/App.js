@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Todos from "./components/Todos";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/todos" component={Todos} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
         </Switch>

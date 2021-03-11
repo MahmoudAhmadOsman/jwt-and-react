@@ -87,7 +87,7 @@ const Register = (props) => {
                   value={user.role}
                   onChange={onChange}
                   className="form-control form-control-lg"
-                  placeholder="Enter role the user's role admin or user"
+                  placeholder="Enter a role the user such as admin or user"
                   required
                 />
               </div>
@@ -102,7 +102,6 @@ const Register = (props) => {
                 <Link to="/login">Already have an account?</Link>
               </span>
             </form>
-            {/* {message ? <Message message={message} /> : null} */}
           </div>
         </div>
       </div>

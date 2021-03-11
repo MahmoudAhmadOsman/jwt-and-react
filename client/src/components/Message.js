@@ -1,15 +1,15 @@
 import React from "react";
 
 const allErrorsTypes = (props) => {
-    let alertType = "alert ";
-    if (props.message.msgError) alertType = alertType + "alert-danger";
-    else alertType = alertType + "alert-success";
-    return alertType + " text-center";
+  let alertType = "alert ";
+  if (props.message.msgError) alertType = alertType + "alert-danger";
+  else alertType = alertType + "alert-success";
+  return alertType + " text-center";
 };
 
 const Message = (props) => {
-    return (
-        <section className="alert-messages">
+  return (
+    <section className="alert-messages mt-3">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -20,7 +20,7 @@ const Message = (props) => {
         </div>
       </div>
     </section>
-    );
+  );
 };
 
 export default Message;

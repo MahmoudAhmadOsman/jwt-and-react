@@ -2,20 +2,20 @@ import React, { createContext, useState, useEffect } from "react";
 import AuthService from "../Services/AuthService";
 import Loading from "../components/Loading";
 // Create Context
-//AuthContext: gives us Providers & Consumer
+//AuthContext: gives you Providers & Consumer
 export const AuthContext = createContext();
 
 //Deconstruct props as {children} or component that you wan to wrap the Provider
 export default ({ children }) => {
-  const [user, setUser] = useState(null); //Use Hook
+  const [user, setUser] = useState(null); //Use Hook function
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false); //isAuthenticated Hook
+  const [isAuthenticated, setIsAuthenticated] = useState(false); //isAuthenticated custom Hook
 
-  const [isLoading, setIsLoading] = useState(false); //isLoaded Hook
+  const [isLoading, setIsLoading] = useState(false); //isLoaded custom Hook
 
   useEffect(() => {
     AuthService.isAuthenticated().then((data) => {
-      setUser(data.user); // Set the user to the backend response data
+      setUser(data.user); // Set the user: to the response data that is comming from the backend
       setIsAuthenticated(data.isAuthenticated);
       setIsLoading(true);
     });
@@ -24,7 +24,6 @@ export default ({ children }) => {
   return (
     <div>
       {!isLoading ? (
-        
         <Loading />
       ) : (
         <AuthContext.Provider

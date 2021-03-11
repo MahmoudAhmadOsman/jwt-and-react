@@ -114,7 +114,7 @@ userRouter.post(
       if (err)
         res.status(500).json({
           message: {
-            msgBody: "An error has occured",
+            msgBody: "Opps. An error has occured",
             msgError: true,
           },
         });
@@ -131,7 +131,7 @@ userRouter.post(
           else
             res.status(200).json({
               message: {
-                msgBody: "New to do is created Successfully!",
+                msgBody: "Success: new todo has been created!",
                 msgError: false,
               },
             });

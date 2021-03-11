@@ -1,0 +1,19 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+const TodoItem = (props) => {
+  const { todo } = props;
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-md-10 mt-3">
+          <h3>
+            <Link to="#">{todo.name}</Link>
+          </h3>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TodoItem;
