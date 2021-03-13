@@ -12,10 +12,10 @@ const signToken = (userID) => {
   return JWT.sign(
     //iss = issuer - who issued this token
     {
-      iss: "MahmoudOsman",
+      iss: "jwt_cookies",
       sub: userID, // sub - subject - who is this for
     },
-    "MahmoudOsman",
+    "jwt_cookies",
     {
       expiresIn: "10h", // Expires in 2 hours
     }
@@ -48,8 +48,7 @@ userRouter.post("/register", (req, res) => {
         if (err)
           res.status(500).json({
             message: {
-              msgBody:
-                "An error has occured while trying to create a new user!",
+              msgBody: "All fields are required!",
               msgError: true,
             },
           });
@@ -114,7 +113,7 @@ userRouter.post(
       if (err)
         res.status(500).json({
           message: {
-            msgBody: "Opps. An error has occured",
+            msgBody: "Opps. An error has occured!. Cannot create to do!",
             msgError: true,
           },
         });

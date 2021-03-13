@@ -9,7 +9,7 @@
 - Bcrypt
 - Passport
 - Bootstrap 4
-- HTML5/CSS3
+- HTML5/SASS
 - And More...
 
 ---

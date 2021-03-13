@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EACL,QAAQ,EAAE,QAAQ;CACrB",
+    "sources": [
+        "../client/src/components/Register.scss"
+    ],
+    "names": [],
+    "file": "Register.css"
+}
