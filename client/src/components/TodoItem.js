@@ -7,7 +7,7 @@ const TodoItem = (props) => {
     <div className="container">
       <div className="row">
         <div className="col-md-10 mt-3">
-          <h3>
+          <h3 class="list-group-item">
             <Link to="#">{todo.name}</Link>
           </h3>
         </div>

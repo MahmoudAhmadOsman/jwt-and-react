@@ -65,7 +65,7 @@ const Todos = (props) => {
                     <span>No data. Please create new todos.</span>
                   </div>
                 ) : (
-                  <div className="card mb-3">
+                  <div className="mb-3">
                     <TodoItem key={todo._id} todo={todo} />
                   </div>
                 )}
@@ -74,25 +74,27 @@ const Todos = (props) => {
           })}
         </div>
         <div className="col-md-4">
-          <form onSubmit={onSubmit}>
-            <div className="form-group">
-              <h3 className="font-weight-bold text-info">Create New Todo</h3>
-              <input
-                type="text"
-                name="todo"
-                value={todo.name}
-                onChange={onChange}
-                className="form-control form-control-lg mb-3"
-                placeholder="Create a new todo"
-              />
-              <button
-                type="submit"
-                className="btn btn-lg btn-outline-info btn-lg font-weight-bold"
-              >
-                SUBMIT
-              </button>
-            </div>
-          </form>
+          <div className="todos_form">
+            <form onSubmit={onSubmit}>
+              <div className="form-group">
+                <h3 className="font-weight-bold text-info">Create New Todo</h3>
+                <input
+                  type="text"
+                  name="todo"
+                  value={todo.name}
+                  onChange={onChange}
+                  className="form-control form-control-lg mb-3"
+                  placeholder="Create a new todo"
+                />
+                <button
+                  type="submit"
+                  className="btn btn-lg btn-outline-info btn-lg font-weight-bold"
+                >
+                  SUBMIT
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </section>
