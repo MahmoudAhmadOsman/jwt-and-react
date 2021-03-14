@@ -4,6 +4,9 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 app.use(cookieParser());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.json());
 
 mongoose.connect(
