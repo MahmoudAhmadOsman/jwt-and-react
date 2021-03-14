@@ -75,7 +75,8 @@ const Login = (props) => {
                   Login
                 </button>
                 <span className="ml-3">
-                  <Link to="/register">Don't have an account?</Link>
+                  Don't have an account?&nbsp;
+                  <Link to="/register">Regiter.</Link>
                 </span>
               </form>
             </div>

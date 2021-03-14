@@ -113,7 +113,8 @@ const Register = (props) => {
                   Register
                 </button>
                 <span className="ml-3">
-                  <Link to="/login">Already have an account? </Link>
+                  Already have an account? &nbsp;
+                  <Link to="/login">Login.</Link>
                 </span>
               </form>
             </div>

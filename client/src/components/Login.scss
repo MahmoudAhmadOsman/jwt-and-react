@@ -42,9 +42,9 @@
 
                 input[type="text"],
                 input[type="password"] {
-                    background-color: #fffdfd;
-                    border: 0px;
+                    border: 2px solid #d8dcdc;
                     border-radius: 50px;
+                    background-color: #e6ecec;
                     color: #000 !important;
                 }
 
@@ -53,11 +53,10 @@
                 }
 
                 input:focus {
-                    border: 2px solid #fff;
-                    background-color: yellow;
-                    background-color: #b0acac;
-                    background-color: #000;
-                    color: #fff !important;
+                    border: 2px solid #d8dcdc;
+                    // background-color: #b0acac;
+                    background-color: #cccdcd;
+                    color: #000 !important;
                 }
 
                 .btn-outline-info {

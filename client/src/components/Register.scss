@@ -40,17 +40,15 @@
 
                 input[type="text"],
                 input[type="password"] {
-                    border: 0px;
+                    border: 2px solid #d8dcdc;
                     border-radius: 50px;
-                    background-color: #fffdfd;
+                    background-color: #e6ecec;
                 }
 
                 input:focus {
-                    border: 2px solid #fff;
-
-
-                    background-color: #000;
-                    color: #fff !important;
+                    // border: 2px solid #d8dcdc;
+                    background-color: #cccdcd;
+                    color: #000 !important;
                 }
 
                 ::placeholder {
@@ -73,6 +71,7 @@
         position: relative;
 
         .register_form {
+            --my-var: 0, 0, 0;
             width: auto;
             height: 100vh;
             overflow: hidden;
