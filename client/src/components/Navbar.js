@@ -61,11 +61,11 @@ const Navbar = (props) => {
       <>
         <Link to="/">
           <li className="nav-item nav-link active">Home</li>
-        </Link>{" "}
+        </Link>
         <Link to="/todos">
-          <li className="nav-item nav-link">Todos</li>{" "}
-        </Link>{" "}
-        {/* Display pages based on user role */}{" "}
+          <li className="nav-item nav-link">Todos</li>
+        </Link>
+        {/* Display pages based on user role */}
         {user.role === "admin" ? (
           <Link to="/admin">
             <li className="nav-item nav-link">Admin</li>
@@ -78,7 +78,7 @@ const Navbar = (props) => {
           onClick={onClickLogoutHandler}
         >
           Logout
-        </button>{" "}
+        </button>
       </>
     );
   };

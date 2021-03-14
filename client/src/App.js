@@ -12,6 +12,7 @@ import Admin from "./components/Admin";
 import PrivateRoute from "./privateRoutes/PrivateRoute";
 import Restricted from "./components/Restricted";
 import RestrictedPrivateRoute from "./privateRoutes/RestrictedPrivateRoute";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -22,11 +23,13 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
-          {/* <Route exact path="/admin" component={Admin} /> */}
+          <RestrictedPrivateRoute path="/login" component={Login} />
+          <RestrictedPrivateRoute path="/register" component={Register} />
+          <RestrictedPrivateRoute path="/restricted" component={Restricted} />
+
           {/* Protected Route */}
           <PrivateRoute path="/admin" roles={["admin"]} component={Admin} />
 
-          {/* <Route exact path="/todos" component={Todos} /> */}
           {/* Protected Route */}
           <PrivateRoute
             path="/todos"
@@ -34,8 +37,12 @@ function App() {
             component={Todos}
           />
           <Route path="/restricted" component={Restricted} />
-          <RestrictedPrivateRoute path="/login" component={Login} />
-          <RestrictedPrivateRoute path="/register" component={Register} />
+          {/* <Route path="/restricted">
+            <Restricted />
+          </Route> */}
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       </Router>
     </section>

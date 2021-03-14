@@ -58,27 +58,38 @@ const Todos = (props) => {
       <h1 className="text-success">All Tasks</h1>
       <div className="row">
         <div className="col-md-6">
+          <hr />
+          {/* <h3>Length: {todos.length} </h3> */}
+          {todos.length > 0 ? (
+            <div>{/* <TodoItem key={todo._id} todo={todo} /> */}</div>
+          ) : (
+            <div className="alert alert-danger text-center mt-3">
+              <span>NO DATA IS FOUND!</span>
+            </div>
+          )}
           {todos.map((todo) => {
             return (
               <div>
-                {todos.length < 0 ? (
-                  <div className="alert alert-danger text-center mt-3">
-                    <span>No data. Please create new todos.</span>
+                {todos.length > 0 ? (
+                  <div>
+                    <TodoItem key={todo._id} todo={todo} />
                   </div>
                 ) : (
-                  <div className="mb-3">
-                    <TodoItem key={todo._id} todo={todo} />
+                  <div className="alert alert-danger text-center mt-3">
+                    <span>NO DATA IS FOUND!</span>
                   </div>
                 )}
               </div>
             );
           })}
         </div>
+
         <div className="col-md-6">
+          <h3 className="font-weight-bold text-info">Create New Todo</h3>
+
           <div className="todos_form">
             <form onSubmit={onSubmit}>
               <div className="form-group">
-                <h3 className="font-weight-bold text-info">Create New Todo</h3>
                 <input
                   type="text"
                   name="todo"
