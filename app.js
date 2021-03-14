@@ -15,8 +15,8 @@ app.use(express.json());
 // ** MIDDLEWARE ** //
 const whitelist = [
   "http://localhost:3000",
-  "http://localhost:8080",
-  "https://shrouded-journey-38552.herokuapp.com",
+  "http://localhost:5000",
+  "https://reapp02.herokuapp.com/",
 ];
 const corsOptions = {
   origin: function (origin, callback) {
