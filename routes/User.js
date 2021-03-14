@@ -12,7 +12,7 @@ const signToken = (userID) => {
   return JWT.sign(
     //iss = issuer - who issued this token
     {
-      iss: "jwt_cookies",
+      iss: "jwt_cookies", // passport.js secretOrKey & this need to be same name
       sub: userID, // sub - subject - who is this for
     },
     "jwt_cookies",
@@ -152,7 +152,7 @@ userRouter.get(
         if (err)
           res.status(500).json({
             message: {
-              msgBody: "An error has occured",
+              msgBody: "An error has occured. Cannot create!",
               msgError: true,
             },
           });
@@ -174,7 +174,7 @@ userRouter.get(
     if (req.user.role === "admin") {
       res.status(200).json({
         message: {
-          msgBody: "Welcome. You are an admin!",
+          msgBody: "Welcome. Hey, You are an admin!",
           msgError: false,
         },
       });

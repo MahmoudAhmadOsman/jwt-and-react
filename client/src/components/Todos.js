@@ -33,7 +33,7 @@ const Todos = (props) => {
           setTodos(getData.todos);
           setMessage(message);
         });
-      } else if (message.msgBody === "OOs. You not Authorized!") {
+      } else if (message.msgBody === "OOps. You not Authorized!") {
         setMessage(message);
         authContext.setUser({ username: "", role: "" });
         authContext.setIsAuthenticated(false);
@@ -55,8 +55,9 @@ const Todos = (props) => {
   return (
     <section className="container">
       {message ? <Message message={message} /> : null}
+      <h1 className="text-success">All Tasks</h1>
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-6">
           {todos.map((todo) => {
             return (
               <div>
@@ -73,7 +74,7 @@ const Todos = (props) => {
             );
           })}
         </div>
-        <div className="col-md-4">
+        <div className="col-md-6">
           <div className="todos_form">
             <form onSubmit={onSubmit}>
               <div className="form-group">

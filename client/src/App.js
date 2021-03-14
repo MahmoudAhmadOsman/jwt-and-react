@@ -9,6 +9,9 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Todos from "./components/Todos";
 import Admin from "./components/Admin";
+import PrivateRoute from "./privateRoutes/PrivateRoute";
+import Restricted from "./components/Restricted";
+import RestrictedPrivateRoute from "./privateRoutes/RestrictedPrivateRoute";
 
 function App() {
   return (
@@ -19,11 +22,20 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
-          <Route exact path="/admin" component={Admin} />
+          {/* <Route exact path="/admin" component={Admin} /> */}
+          {/* Protected Route */}
+          <PrivateRoute path="/admin" roles={["admin"]} component={Admin} />
 
-          <Route exact path="/todos" component={Todos} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
+          {/* <Route exact path="/todos" component={Todos} /> */}
+          {/* Protected Route */}
+          <PrivateRoute
+            path="/todos"
+            roles={["user", "admin"]}
+            component={Todos}
+          />
+          <Route path="/restricted" component={Restricted} />
+          <RestrictedPrivateRoute path="/login" component={Login} />
+          <RestrictedPrivateRoute path="/register" component={Register} />
         </Switch>
       </Router>
     </section>

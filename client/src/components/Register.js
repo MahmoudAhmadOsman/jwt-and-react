@@ -19,8 +19,13 @@ const Register = (props) => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  //Rested the state of the user
   const resetForm = () => {
-    setUser({ username: "", password: "", role: "" });
+    setUser({
+      username: "",
+      password: "",
+      role: "",
+    });
   };
 
   const onSubmit = (e) => {
@@ -32,7 +37,7 @@ const Register = (props) => {
       if (!message.msgError) {
         timerID = setTimeout(() => {
           props.history.push("/login");
-        }, 2000);
+        }, 3000);
       }
     });
   };
@@ -52,7 +57,10 @@ const Register = (props) => {
               <hr />
               <form onSubmit={onSubmit}>
                 <div className="form-group">
-                  <label htmlFor="username" className="font-weight-bold">
+                  <label
+                    htmlFor="username"
+                    className="font-weight-bold text-lowercase"
+                  >
                     User Name
                   </label>
                   <input
@@ -60,7 +68,7 @@ const Register = (props) => {
                     name="username"
                     value={user.username}
                     onChange={onChange}
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg text-lowercase"
                     placeholder="Enter your username"
                     minLength="5"
                     required
@@ -75,7 +83,7 @@ const Register = (props) => {
                     name="password"
                     value={user.password}
                     onChange={onChange}
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg text-lowercase"
                     placeholder="Enter your password"
                     minLength="8"
                     required
@@ -83,7 +91,7 @@ const Register = (props) => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="role" className="font-weight-bold">
+                  <label htmlFor="role" className="font-weight-bold ">
                     User Role
                   </label>
                   <input
@@ -91,7 +99,7 @@ const Register = (props) => {
                     name="role"
                     value={user.role}
                     onChange={onChange}
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg text-lowercase"
                     placeholder="Enter a role for the user"
                     minLength="4"
                     required

@@ -48,7 +48,7 @@ const Login = (props) => {
                     type="text"
                     name="username"
                     onChange={onChange}
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg text-lowercase"
                     placeholder="Enter your username"
                     required
                   />
@@ -62,7 +62,7 @@ const Login = (props) => {
                     type="password"
                     name="password"
                     onChange={onChange}
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg text-lowercase"
                     placeholder="Enter your password"
                     required
                   />
