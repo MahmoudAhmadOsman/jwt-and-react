@@ -1,13 +1,16 @@
 {
   "name": "jwt-login",
   "version": "1.0.0",
-  "description": "jwt login & register",
+  "description": "jwt login & registeration",
   "main": "app.js",
   "github": "https://github.com/MahmoudAhmadOsman/jwt-react-authorization",
   "scripts": {
-    "start": "node app.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently -n 'Server,Client' -c 'red,yellow' \"nodemon app.js\" \"npm run client\""
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "start": "node server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n 'server,client' -c 'red,green'  \"nodemon server.js\" \"npm run client\""
   },
   "author": "Mahmoud Osman",
   "license": "MIT",

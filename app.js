@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
@@ -29,14 +30,12 @@ app.use("/user", userRouter);
 
 const User = require("./models/User");
 
-app.use(express.static(path.join(__dirname, "build")));
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
-
 //Check if the connection variable
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static(path.join(__dirname, "client/build")));
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
 }
 
 const port = process.env.PORT || 5000;
