@@ -4,35 +4,15 @@ const bodyParser = require("body-parser");
 const app = express();
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
-const cors = require("cors");
-const helmet = require("helmet");
+ 
+ 
 app.use(cookieParser());
-
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use(express.json());
 
-// ** MIDDLEWARE ** //
-const whitelist = [
-  "http://localhost:3000",
-  "http://localhost:5000",
-  "https://reapp02.herokuapp.com/",
-];
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin);
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable");
-      callback(null, true);
-    } else {
-      console.log("Origin rejected");
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
-app.use(helmet());
-// --> Add this
-app.use(cors(corsOptions));
+app.use("/", express.static(__dirname + "/build"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+ 
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/mongodb2020",
@@ -60,10 +40,7 @@ const User = require("./models/User");
 
 //Check if the connection variable
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
-  app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
-  });
+  app.use(express.static("client/build"));
 }
 
 const port = process.env.PORT || 5000;
