@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/", express.static(__dirname + "/client/build"));
-app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+app.get("/", (req, res) =>
+  res.sendFile(__dirname + "/client/build/index.html")
+);
 
 //Redidirect: Unsupported Routes
 // app.get("*", function (req, res) {
@@ -42,9 +44,9 @@ app.use("/user", userRouter);
 const User = require("./models/User");
 
 //Check if the connection variable
-// if (process.env.NODE_ENV === "production") {
-//   app.use(express.static("/client/build"));
-// }
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("/client/build"));
+}
 
 const port = process.env.PORT || 5000;
 const server = app.listen(port, () =>
