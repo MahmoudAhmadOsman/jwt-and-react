@@ -23,8 +23,9 @@ const signToken = (userID) => {
 };
 
 //User Router - for creating or registering new User
+//Get username password and role from the request body
 userRouter.post("/register", (req, res) => {
-  const { username, password, role } = req.body; // Get username password and role from the request body
+  const { username, password, role } = req.body;
   User.findOne({ username }, (err, user) => {
     if (err)
       res.status(500).json({
@@ -113,7 +114,7 @@ userRouter.post(
       if (err)
         res.status(500).json({
           message: {
-            msgBody: "Opps. An error has occured!. Cannot create to do!",
+            msgBody: "Opps. Task field is required!",
             msgError: true,
           },
         });

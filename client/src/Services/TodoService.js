@@ -7,7 +7,7 @@ export default {
       } else
         return {
           message: {
-            msgBody: "You are not authorized to create todos!",
+            msgBody: "You are not authorized to create task!",
             msgError: true,
           },
         };
@@ -27,7 +27,7 @@ export default {
       } else
         return {
           message: {
-            msgBody: "Oops. You are not authorized to create todos!!",
+            msgBody: "Oops. You are not authorized to create a task!!",
           },
           msgError: true,
         };
