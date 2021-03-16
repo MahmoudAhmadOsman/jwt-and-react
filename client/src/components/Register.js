@@ -100,7 +100,7 @@ const Register = (props) => {
                     value={user.role}
                     onChange={onChange}
                     className="form-control form-control-lg text-lowercase"
-                    placeholder="Enter a role for the user"
+                    placeholder="Enter your role"
                     minLength="4"
                     required
                   />

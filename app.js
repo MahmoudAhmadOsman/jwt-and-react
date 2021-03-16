@@ -4,15 +4,15 @@ const bodyParser = require("body-parser");
 const app = express();
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
- 
- 
+
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", express.static(__dirname + "/build"));
-app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
- 
+app.use("/", express.static(__dirname + "/client/build"));
+app.get("/", (req, res) =>
+  res.sendFile(__dirname + "/client/build/index.html")
+);
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/mongodb2020",
