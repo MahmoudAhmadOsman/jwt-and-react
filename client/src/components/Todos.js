@@ -59,33 +59,26 @@ const Todos = (props) => {
       <div className="row">
         <div className="col-md-6">
           <hr />
-          {/* <h3>Length: {todos.length} </h3> */}
+
           {todos.length > 0 ? (
-            <div>{/* <TodoItem key={todo._id} todo={todo} /> */}</div>
+            <div>
+              {todos.map((todo) => {
+                return (
+                  <div>
+                    <TodoItem key={todo._id} todo={todo} />
+                  </div>
+                );
+              })}
+            </div>
           ) : (
             <div className="alert alert-danger text-center mt-3">
               <span>NO DATA IS FOUND!</span>
             </div>
           )}
-          {todos.map((todo) => {
-            return (
-              <div>
-                {todos.length > 0 ? (
-                  <div>
-                    <TodoItem key={todo._id} todo={todo} />
-                  </div>
-                ) : (
-                  <div className="alert alert-danger text-center mt-3">
-                    <span>NO DATA IS FOUND!</span>
-                  </div>
-                )}
-              </div>
-            );
-          })}
         </div>
 
         <div className="col-md-6">
-          <h3 className="font-weight-bold text-info">Create New Todo</h3>
+          <h3 className="font-weight-bold text-primary">Create New Task</h3>
 
           <div className="todos_form">
             <form onSubmit={onSubmit}>
@@ -96,11 +89,11 @@ const Todos = (props) => {
                   value={todo.name}
                   onChange={onChange}
                   className="form-control form-control-lg mb-3"
-                  placeholder="Create a new todo"
+                  placeholder="Create a new task"
                 />
                 <button
                   type="submit"
-                  className="btn btn-lg btn-outline-info btn-lg font-weight-bold"
+                  className="btn btn-lg btn-outline-primary btn-lg font-weight-bold"
                 >
                   SUBMIT
                 </button>

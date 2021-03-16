@@ -6,12 +6,12 @@ const TodoItem = (props) => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-md-10 mt-3">
-          <h3 class="list-group-item">
+        <div className="col-md-12">
+          <h4 class="list-group-item">
             <Link to="#" className="text-capitalize">
-              {todo.name}
+              <span className="fa fa-check">&nbsp; {todo.name}</span>
             </Link>
-          </h3>
+          </h4>
         </div>
       </div>
     </div>
