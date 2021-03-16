@@ -14,6 +14,11 @@ app.get("/", (req, res) =>
   res.sendFile(__dirname + "/client/build/index.html")
 );
 
+//Redidirect: Unsupported Routes
+// app.get("*", function (req, res) {
+//   res.redirect("/");
+// });
+
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/mongodb2020",
   {
