@@ -9,10 +9,10 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", express.static(__dirname + "/client/build")); //Frontend
-app.get("/", (req, res) =>
-  res.sendFile(__dirname + "/client/build/index.html")
-); //Backend
+// app.use("/", express.static(__dirname + "/client/build")); //Frontend
+// app.get("/", (req, res) =>
+//   res.sendFile(__dirname + "/client/build/index.html")
+// ); //Backend
 
 //Redidirect: Unsupported Routes
 // app.get("*", function (req, res) {
@@ -45,7 +45,7 @@ const User = require("./models/User");
 
 //Check if the connection variable
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("/client/build"));
+  app.use(express.static("client/build"));
 }
 
 const port = process.env.PORT || 5000;

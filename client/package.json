@@ -1,7 +1,5 @@
 {
   "name": "client",
-  "proxy": "http://localhost:5000",
-  "secure": false,
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,8 +37,6 @@
       "last 1 safari version"
     ]
   },
-  "engines": {
-    "node": "12.4.0",
-    "npm": "6.9.0"
-  }
+  "proxy": "http://localhost:5000",
+  "secure": false
 }
