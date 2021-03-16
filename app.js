@@ -10,7 +10,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/", express.static(__dirname + "/client/build")); //Frontend
-app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html")); //Backend
+app.get("/", (req, res) =>
+  res.sendFile(__dirname + "/client/build/index.html")
+); //Backend
 
 //Redidirect: Unsupported Routes
 // app.get("*", function (req, res) {
