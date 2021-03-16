@@ -55,7 +55,7 @@ const Todos = (props) => {
   return (
     <section className="container">
       {message ? <Message message={message} /> : null}
-      <h1 className="text-success">All Tasks</h1>
+      <h1 className="text-primary">All Tasks</h1>
       <div className="row">
         <div className="col-md-6">
           <hr />
@@ -72,7 +72,9 @@ const Todos = (props) => {
             </div>
           ) : (
             <div className="alert alert-danger text-center mt-3">
-              <span>NO DATA IS FOUND!</span>
+              <span className="font-weight-bold">
+                YOU DON'T HAVE ANY TASK YET!
+              </span>
             </div>
           )}
         </div>
