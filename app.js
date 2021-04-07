@@ -16,7 +16,7 @@ app.use("/", express.static(__dirname + "/client/build")); //Frontend
 
 //Root route
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + "client/build")
+  res.sendFile(__dirname + "client/build/index.html")
 });
 
 
