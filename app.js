@@ -10,21 +10,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use("/", express.static(__dirname + "/client/build")); //Frontend
-// app.get("/", (req, res) =>
-//   res.sendFile(__dirname + "/client/build/index.html")
-// ); //Backend
-
 //Root route
 app.get('/', function (req, res) {
   res.sendFile(__dirname + "client/build/index.html")
 });
 
-
-//Redidirect: Unsupported Routes
-// app.get("*", function (req, res) {
-//   res.redirect("/");
-// });
-
+//Database Connection
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost:27017/mongodb2020",
   {
